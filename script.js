@@ -17,6 +17,18 @@
     function kerroin2(){
         var pisteet 
     }
-    function kerroin3()){
+    function kerroin3(){
         var pisteet 
     }
+    function piirra(){
+        var c=document.getElementById("Canvas");
+        var ctx=c.getContext("2d");
+        
+        var img = new Image;
+        img.src = "click.jpg";
+        img.onload = function() {
+            ctx.drawImage(img, 190,80);
+            this.onclick.alert ("the image is drawn");
+        }
+        
+   }
