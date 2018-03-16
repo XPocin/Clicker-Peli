@@ -65,6 +65,28 @@ function kaksi(){
     console.log("clout:" + kerroin);
     }
 
+function nelja(){
+    if (laskuri < 40000) {
+        return;
+    }
+    laskuri = laskuri-40000;
+    kerroin = kerroin + 40;
+    clout++;
+    tulosta();
+    console.log("clout:" + kerroin);
+    }
+
+function sata(){
+    if (laskuri < 100000) {
+        return;
+    }
+    laskuri = laskuri-100000;
+    kerroin = kerroin + 100;
+    clout++;
+    tulosta();
+    console.log("clout:" + kerroin);
+    }
+
 
 function tulosta(){
     console.log(laskuri);
