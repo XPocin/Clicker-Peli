@@ -1,12 +1,11 @@
 body {
     /*background-image: url("background.jpg");*/
-    background: linear-gradient(to right, blue, white);;
+    background: linear-gradient(to right, lightblue, white);;
  }
 
 .container{
     width: 525px;
     margin: 50px auto;
-    border: 1px solid red;
 }
 
 .efect {
@@ -28,7 +27,4 @@ a {
     font-style: oblique;
     font-family: sans-serif;
     color: rgb(255, 0, 0);   
-}
-canvas {
-    
 }

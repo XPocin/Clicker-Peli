@@ -1,16 +1,74 @@
-var pisteet = 0
-var kerroin = 1
+var pisteet = 0;
+var kerroin = 1;
+var clout;
+var laskenta = document.getElementById("laskenta");
 var laskuri = 0;
 
 function nappi(){
-        laskuri = laskuri + 1 * kerroin;
-        console.log('Pisteet: ' + laskuri);
-        tulosta();
+    laskuri = laskuri + 1 * kerroin;
+    console.log('Pisteet: ' + laskuri);
+    tulosta();
+}
+
+function yksipuoli(){
+    if (laskuri < 150) {
+        return;
     }
+    laskuri = laskuri-150;
+    kerroin = kerroin + 1.5;
+    clout++;
+    tulosta();
+    console.log("clout:" + kerroin);
+}
+
+function kolme(){
+    if (laskuri < 3000) {
+        return;
+    }
+    laskuri = laskuri-3000;
+    kerroin = kerroin + 3;
+    clout++;
+    tulosta();
+    console.log("clout:" + kerroin);
+}
+
+function kuusi(){
+    if (laskuri < 6000) {
+        return;
+    }
+    laskuri = laskuri-6000;
+    kerroin = kerroin + 6;
+    clout++;
+    tulosta();
+    console.log("clout:" + kerroin);
+    }
+
+function kymmenen(){
+    if (laskuri < 10000) {
+        return;
+    }
+    laskuri = laskuri-10000;
+    kerroin = kerroin + 10;
+    clout++;
+    tulosta();
+    console.log("clout:" + kerroin);
+    }
+
+function kaksi(){
+    if (laskuri < 20000) {
+        return;
+    }
+    laskuri = laskuri-20000;
+    kerroin = kerroin + 20;
+    clout++;
+    tulosta();
+    console.log("clout:" + kerroin);
+    }
+
 
 function tulosta(){
     console.log(laskuri);
-    document.getElementById("klikit").innerHTML = laskuri;
+    document.getElementById("laskenta").innerHTML = laskuri;
 }
 
 function laskuri(){
@@ -18,20 +76,8 @@ function laskuri(){
     tulosta();
 }
 
-    function Show(){
-        var pisteet = 0;
-        document.getElementById("Show text").innerHTML = pisteet;
-    }
-
-    function piirra(){
-        var c=document.getElementById("Canvas");
-        var ctx=c.getContext("2d");
-        
-        var img = new Image;
-        img.src = "click.jpg";
-        img.onload = function() {
-            ctx.drawImage(img, 190,80);
-            this.onclick.alert ("the image is drawn");
-        }
-        
-   }
+function laske(){
+    laskuri = laskuri + 1 * clout *10;
+    laskuri++;
+    laskenta.innerHTML = laskuri;
+}
