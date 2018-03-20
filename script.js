@@ -1,7 +1,6 @@
 var pisteet = 0;
 var kerroin = 1;
 var clout;
-var laskenta = document.getElementById("laskenta");
 var laskuri = 0;
 
 function nappi(){
