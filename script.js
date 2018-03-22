@@ -2,12 +2,13 @@ var pisteet = 0;
 var kerroin = 1;
 var clout;
 var laskuri = 0;
+var timerId;
 
 function nappi(){
     laskuri = laskuri + 1 * kerroin;
     console.log('Pisteet: ' + laskuri);
     tulosta();
-}
+    }
 
 function yksipuoli(){
     if (laskuri < 150) {
@@ -18,7 +19,7 @@ function yksipuoli(){
     clout++;
     tulosta();
     console.log("clout:" + kerroin);
-}
+    }
 
 function kolme(){
     if (laskuri < 3000) {
@@ -29,7 +30,7 @@ function kolme(){
     clout++;
     tulosta();
     console.log("clout:" + kerroin);
-}
+    }
 
 function kuusi(){
     if (laskuri < 6000) {
@@ -86,19 +87,26 @@ function sata(){
     console.log("clout:" + kerroin);
     }
 
+function aloita(){
+    if (laskuri < 5000) {
+        return;
+    }
+    laskuri = laskuri-5000;
+	timerId = setInterval(laske, 1000);
+	}
 
 function tulosta(){
     console.log(laskuri);
     document.getElementById("laskenta").innerHTML = laskuri;
-}
+    }
 
 function laskuri(){
     console.log(pisteet);
     tulosta();
-}
+    }
 
 function laske(){
     laskuri = laskuri + 1 * clout *10;
     laskuri++;
     laskenta.innerHTML = laskuri;
-}
+    }
