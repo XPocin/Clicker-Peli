@@ -1,8 +1,8 @@
-var pisteet = 0;
 var kerroin = 1;
-var clout;
 var laskuri = 0;
 var timerId;
+var info = document.getElementById('info');
+
 
 function nappi(){
     laskuri = laskuri + 1 * kerroin;
@@ -12,86 +12,89 @@ function nappi(){
 
 function yksipuoli(){
     if (laskuri < 150) {
+        info.innerHTML = "Ei pisteet riitä!";
         return;
     }
     laskuri = laskuri-150;
-    kerroin = kerroin + 1.5;
-    clout++;
+    kerroin = kerroin + 0.5;
     tulosta();
-    console.log("clout:" + kerroin);
+    console.log("kerroin: " + kerroin);
     }
 
 function kolme(){
     if (laskuri < 3000) {
+        show();
+        info.innerHTML = "Ei pisteet riitä!";
+        hide();
         return;
     }
     laskuri = laskuri-3000;
     kerroin = kerroin + 3;
-    clout++;
     tulosta();
-    console.log("clout:" + kerroin);
+    console.log("kerroin:" + kerroin);
     }
 
 function kuusi(){
     if (laskuri < 6000) {
+        info.innerHTML = "Ei pisteet riitä!";
         return;
     }
     laskuri = laskuri-6000;
     kerroin = kerroin + 6;
-    clout++;
     tulosta();
-    console.log("clout:" + kerroin);
+    console.log("kerroin:" + kerroin);
     }
 
 function kymmenen(){
     if (laskuri < 10000) {
+        info.innerHTML = "Ei pisteet riitä!";
         return;
     }
     laskuri = laskuri-10000;
     kerroin = kerroin + 10;
-    clout++;
     tulosta();
-    console.log("clout:" + kerroin);
+    console.log("kerroin:" + kerroin);
     }
 
 function kaksi(){
     if (laskuri < 20000) {
+        info.innerHTML = "Ei pisteet riitä!";
         return;
     }
     laskuri = laskuri-20000;
     kerroin = kerroin + 20;
-    clout++;
     tulosta();
-    console.log("clout:" + kerroin);
+    console.log("kerroin:" + kerroin);
     }
 
 function nelja(){
     if (laskuri < 40000) {
+        info.innerHTML = "Ei pisteet riitä!";
         return;
     }
     laskuri = laskuri-40000;
     kerroin = kerroin + 40;
-    clout++;
     tulosta();
-    console.log("clout:" + kerroin);
+    console.log("kerroin:" + kerroin);
     }
 
 function sata(){
     if (laskuri < 100000) {
+        info.innerHTML = "Ei pisteet riitä!";
         return;
     }
     laskuri = laskuri-100000;
     kerroin = kerroin + 100;
-    clout++;
     tulosta();
-    console.log("clout:" + kerroin);
+    console.log("kerroin:" + kerroin);
     }
 
 function aloita(){
     if (laskuri < 5000) {
+        console.log("not enough CloutTokens")
         return;
     }
-    laskuri = laskuri-5000;
+    laskuri = laskuri-5;
 	timerId = setInterval(laske, 1000);
 	}
 
@@ -106,7 +109,17 @@ function laskuri(){
     }
 
 function laske(){
-    laskuri = laskuri + 1 * clout *10;
-    laskuri++;
+    console.log(laskuri);
+    laskuri = laskuri + 1 * kerroin * 10;
     laskenta.innerHTML = laskuri;
     }
+
+function hide(){
+    setTimeout(function(){
+    document.getElementById("info").classList.add('hide');
+       }, 3000);
+    }
+
+function show(){
+    document.getElementById("info").classList.remove('hide');
+}
